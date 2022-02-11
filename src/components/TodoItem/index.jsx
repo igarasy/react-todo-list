@@ -1,14 +1,17 @@
 import * as S from "./styled";
 import Button from "../Button";
+import React from "react";
 
-const TodoItem = (props) => {
-  console.log(props);
+const TodoItem = ({ list }) => {
   return (
-    <S.ContainerTodoItem>
-      <S.Title>{props.title}</S.Title>
-      <S.Description>{props.description}</S.Description>
-      <Button text="Apagar" backgroundColor="#dc143c" />
-    </S.ContainerTodoItem>
+    <div>
+      {list.map((listItem) => (
+        <S.ContainerTodoItem key={listItem.title}>
+          <S.Title>{listItem.title}</S.Title>
+          <Button text="Apagar" backgroundColor="#dc143c" />
+        </S.ContainerTodoItem>
+      ))}
+    </div>
   );
 };
 

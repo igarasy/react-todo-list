@@ -5,14 +5,12 @@ export const ContainerTodoItem = styled.div`
   width: 300px;
   padding: 16px;
   background: #e5e5e5;
-  margin: 16px;
+  margin: auto;
+  margin-top: 16px;
+  margin-bottom: 10px;
 `;
 
 export const Title = styled.h3`
-  margin: 0;
+  margin: 5px 0;
   color: #ee2737;
-`;
-
-export const Description = styled.p`
-  margin: 0;
 `;

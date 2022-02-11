@@ -1,31 +1,21 @@
 import React from "react";
 import TodoItem from "./components/TodoItem";
-import Button from "./components/Button";
 import Input from "./components/Input";
+import { Wrapper } from "./components/Wrapper/styled";
 
 function App() {
-  const list = [
+  const tarefas = [
     {
       title: "Caminhar",
-      description: "Teste",
-    },
-    {
-      title: "Comer",
-      description: "Teste",
-    },
-    {
-      title: "Beber",
-      description: "Teste",
     },
   ];
+  const [list, setList] = React.useState(tarefas);
+
   return (
-    <div>
-      {list.map(({ title, description }) => (
-        <TodoItem title={title} description={description} />
-      ))}
-      <Button text="Adicionar" backgroundColor="#04aa6d" />
-      <Input />
-    </div>
+    <Wrapper>
+      <TodoItem list={list} />
+      <Input id="tarefa" label="Tarefa" value={list} setValue={setList} />
+    </Wrapper>
   );
 }
 

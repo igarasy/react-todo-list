@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-  width: auto;
   padding: 16px;
+  width: 100px;
+  display: flex;
   border-radius: 8px;
   border: none;
-  margin: 0px 8px;
+  margin: ${(props) => props.margin};
   text-transform: uppercase;
   font-weight: 600;
   color: #fff;
