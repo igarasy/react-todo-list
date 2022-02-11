@@ -13,7 +13,7 @@ function App() {
 
   return (
     <Wrapper>
-      <TodoItem list={list} />
+      <TodoItem list={list} setList={setList} />
       <Input id="tarefa" label="Tarefa" value={list} setValue={setList} />
     </Wrapper>
   );

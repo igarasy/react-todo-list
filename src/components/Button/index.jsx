@@ -7,6 +7,7 @@ const Button = (props) => {
       backgroundColor={props.backgroundColor}
       textColor={props.textColor}
       margin={props.margin}
+      onClick={props.onClick}
     >
       {props.text}
     </S.Button>
