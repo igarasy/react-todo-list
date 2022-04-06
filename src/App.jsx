@@ -1,12 +1,12 @@
-import React from "react";
-import TodoItem from "./components/TodoItem";
-import Input from "./components/Input";
-import { Wrapper } from "./components/Wrapper/styled";
+import React from 'react';
+import TodoItem from './components/TodoItem';
+import Input from './components/Input';
+import { Wrapper } from './components/Wrapper/styled';
 
 function App() {
   const tarefas = [
     {
-      title: "Caminhar",
+      title: 'Caminhar',
     },
   ];
   const [list, setList] = React.useState(tarefas);
