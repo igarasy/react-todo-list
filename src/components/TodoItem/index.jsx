@@ -1,8 +1,10 @@
 import * as S from './styled';
 import Button from '../Button';
 import React from 'react';
+import { useLocalStorage } from '../Hooks/useLocalStorage';
 
 const TodoItem = ({ list, setList }) => {
+  const { storedValue } = useLocalStorage();
   function handleRemove(index) {
     setList(
       list.filter((item, i) => {
@@ -21,6 +23,7 @@ const TodoItem = ({ list, setList }) => {
             id={listItem.title}
             onClick={() => handleRemove(index)}
           />
+          {console.log(storedValue)}
         </S.ContainerTodoItem>
       ))}
     </div>

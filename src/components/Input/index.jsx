@@ -1,9 +1,9 @@
-import * as S from "./styled";
-import React from "react";
-import Button from "../Button";
+import * as S from './styled';
+import React from 'react';
+import Button from '../Button';
 
 const Input = ({ label, setValue, value, ...props }) => {
-  const [userInput, setUserInput] = React.useState("");
+  const [userInput, setUserInput] = React.useState('');
 
   const addTask = (userInput) => {
     let copy = [...value];
@@ -14,7 +14,7 @@ const Input = ({ label, setValue, value, ...props }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addTask(userInput);
-    setUserInput("");
+    setUserInput('');
   };
 
   const handleChange = (e) => {
@@ -23,7 +23,7 @@ const Input = ({ label, setValue, value, ...props }) => {
 
   return (
     <S.Form onSubmit={handleSubmit}>
-      <label style={{ display: "flex" }} htmlFor="tarefa">
+      <label style={{ display: 'flex' }} htmlFor="tarefa">
         Digite uma tarefa
       </label>
       <S.Input type="text" value={userInput} onChange={handleChange} />
