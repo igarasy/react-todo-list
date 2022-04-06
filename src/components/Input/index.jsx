@@ -6,9 +6,13 @@ const Input = ({ label, setValue, value, ...props }) => {
   const [userInput, setUserInput] = React.useState('');
 
   const addTask = (userInput) => {
-    let copy = [...value];
-    copy = [...copy, { title: userInput }];
-    setValue(copy);
+    if (userInput.length === 0) {
+      alert('Digite um valor válido');
+    } else {
+      let copy = [...value];
+      copy = [...copy, { title: userInput }];
+      setValue(copy);
+    }
   };
 
   const handleSubmit = (e) => {
