@@ -1,6 +1,10 @@
-import React from 'react';
+import * as React from "react";
+import { Dispatch, SetStateAction } from "react";
 
-export const useLocalStorage = (keyName, defaultValue) => {
+export const useLocalStorage = <T,>(
+  keyName: string,
+  defaultValue: T
+): [T, Dispatch<SetStateAction<T>>] => {
   const [storedValue, setStoredValue] = React.useState(() => {
     try {
       const value = window.localStorage.getItem(keyName);
@@ -15,7 +19,7 @@ export const useLocalStorage = (keyName, defaultValue) => {
     }
   });
 
-  const setValue = (newValue) => {
+  const setValue = (newValue: T) => {
     try {
       window.localStorage.setItem(keyName, JSON.stringify(newValue));
     } catch (err) {}
