@@ -1,29 +1,26 @@
-import * as S from './styled';
-import Button from '../Button';
-import React from 'react';
-import { useLocalStorage } from '../Hooks/useLocalStorage';
+import * as S from "./styled";
+import Button from "../Button/index";
+import * as React from "react";
 
 const TodoItem = ({ list, setList }) => {
-  const { storedValue } = useLocalStorage();
   function handleRemove(index) {
     setList(
-      list.filter((item, i) => {
+      list.filter((item: string, i: number) => {
         return i !== index;
-      }),
+      })
     );
   }
   return (
     <div>
-      {list.map((listItem, index) => (
+      {list.map(({ title }, index: number) => (
         <S.ContainerTodoItem key={index}>
-          <S.Title>{listItem.title}</S.Title>
+          <S.Title>{title}</S.Title>
           <Button
             text="Apagar"
             backgroundColor="#dc143c"
-            id={listItem.title}
+            id={title}
             onClick={() => handleRemove(index)}
           />
-          {console.log(storedValue)}
         </S.ContainerTodoItem>
       ))}
     </div>

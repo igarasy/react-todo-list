@@ -1,7 +1,7 @@
 import * as S from "./styled";
 import * as React from "react";
 
-interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   backgroundColor?: string;
   textColor?: string;
   margin?: string;
