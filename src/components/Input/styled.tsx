@@ -10,9 +10,3 @@ export const Input = styled.input`
   font-size: 15px;
   margin: 10px auto;
 `;
-
-export const Form = styled.form`
-  outline: none;
-  font-size: 15px;
-  margin: 10px auto;
-`;
