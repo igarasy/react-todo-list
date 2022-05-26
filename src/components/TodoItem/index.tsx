@@ -2,24 +2,12 @@ import * as S from "./styled";
 import Button from "../Button/index";
 import * as React from "react";
 
-interface ListItem {
-  title: string;
-}
-
 interface TodoItemProps {
   list: { title: string }[];
-  setList: (newList: ListItem[]) => void;
+  handleRemove: (index: number) => void;
 }
 
-const TodoItem = ({ list, setList }: TodoItemProps) => {
-  function handleRemove(index: number) {
-    setList(
-      list.filter((item, i) => {
-        return i !== index;
-      })
-    );
-  }
-
+const TodoItem = ({ list, handleRemove }: TodoItemProps) => {
   return (
     <div>
       {list.map(({ title }, index: number) => (
